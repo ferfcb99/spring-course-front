@@ -1,6 +1,5 @@
 import { Observable } from "rxjs";
 import { Response } from "src/publics/Response.dto";
-import { People } from "src/entities/without_relations/People.dto";
 
 
 export interface IPeopleController<T>{

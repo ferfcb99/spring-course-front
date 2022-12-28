@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReadComponent } from './read/read.component';
 import { CreateComponent } from './create/create.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,10 @@ import { CreateComponent } from './create/create.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    FormsModule, 
+    HttpClientModule,
+    RouterModule, 
     AppRoutingModule
   ],
   providers: [],

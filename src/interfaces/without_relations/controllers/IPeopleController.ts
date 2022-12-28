@@ -14,6 +14,6 @@ export interface IPeopleController<T>{
 	ResponseEntity<Response<T>> createOrUpdate(T entity);
 	
 	ResponseEntity<Response<List<T>>> createOrUpdateList(List<T> entities);
-*/
+    */
 
 }

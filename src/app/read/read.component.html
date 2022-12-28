@@ -1,1 +1,18 @@
-<p>read works!</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of people;">
+            <th scope="row">{{person.id_people}}</th>
+            <td>{{person.name}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.bornDateTime}}</td>
+        </tr>
+    </tbody>
+</table>

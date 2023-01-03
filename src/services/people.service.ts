@@ -23,11 +23,11 @@ export class PeopleService implements IPeopleController<People>{
   }
 	
   getById(id: number): Observable<Response<People>>{
-    return this.httpClient.get<Response<People>>(`${this.host}${this.baseApi}${this.controllerName}/getAll`);
+    return this.httpClient.get<Response<People>>(`${this.host}${this.baseApi}${this.controllerName}/getById/`);
   }
   
   deleteById(id:number):Observable<Response<People>>{
-    return this.httpClient.get<Response<People>>(`${this.host}${this.baseApi}${this.controllerName}/getAll`);
+    return this.httpClient.delete<Response<People>>(`${this.host}${this.baseApi}${this.controllerName}/deleteById/${id}`);
   }
 
   createOrUpdate(entity: People):Observable<Response<People>>{

@@ -26,4 +26,13 @@ export class ReadComponent implements OnInit{
     })
   }
 
+  deletePeopleById(id: number): void{
+    this.peopleService.deleteById(id).subscribe(resp => {
+      console.log(resp);
+      this.getPeople();
+    }, error =>{
+      console.log(error);
+    })
+  }
+
 }

@@ -5,3 +5,9 @@
 .mgn10top{
     margin-top: 10px;
 }
+
+.cuadricula{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 2rem;
+}

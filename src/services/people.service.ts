@@ -31,7 +31,7 @@ export class PeopleService implements IPeopleController<People>{
   }
 
   createOrUpdate(entity: People):Observable<Response<People>>{
-    return this.httpClient.get<Response<People>>(`${this.host}${this.baseApi}${this.controllerName}/getAll`);
+    return this.httpClient.post<Response<People>>(`${this.host}${this.baseApi}${this.controllerName}/createOrUpdate`, People);
   }
 
   createOrUpdateList (entities:People[]):Observable<Response<People[]>>{

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { People } from 'src/entities/without_relations/People.dto';
 import { PeopleService } from 'src/services/people.service';
 
 @Component({
@@ -19,6 +20,16 @@ export class CreateComponent implements OnInit{
   constructor(private peopleService: PeopleService,
             private formBuilder: FormBuilder){}
 
+
+
+  getCurrentDateTime(): string{
+    let date = new Date();
+    let datetimeformat = date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2) +  "-" +("0" + date.getDate()).slice(-2) + " " + ("0" + date.getHours() ).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2) + ":" + ("0" + date.getSeconds()).slice(-2);
+    return String(datetimeformat);
+
+  }
+  
+
   ngOnInit(): void {
     this.formularioRegistro = this.formBuilder.group({
 
@@ -32,7 +43,19 @@ export class CreateComponent implements OnInit{
 
 
   onSubmit(): void{
-    console.log(JSON.stringify(this.formularioRegistro.value));
+    let dateTime = this.getCurrentDateTime();
+
+    const people: People = this.formularioRegistro.value;
+    people.bornDateTime = dateTime;
+    /*
+    this.peopleService.createOrUpdate(people).subscribe(resp => {
+
+    }, error =>{
+      console.log(error);
+    })
+
+    */
+    console.log(JSON.stringify(people));
   }
 
 }
